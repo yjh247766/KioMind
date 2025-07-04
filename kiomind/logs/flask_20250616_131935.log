@@ -1,0 +1,647 @@
+[DEBUG] OpenAI Key Tail: OiwfUA
+ * Serving Flask app 'main'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.141.63:5000
+[33mPress CTRL+C to quit[0m
+W Query dynamic range failed. Ret code: RKNN_ERR_MODEL_INVALID. (If it is a static shape RKNN model, please ignore the above warning message.)
+127.0.0.1 - - [16/Jun/2025 13:19:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:19:45] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:19:45] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:19:46] "[35m[1mGET /voice HTTP/1.1[0m" 206 -
+127.0.0.1 - - [16/Jun/2025 13:19:48] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:19:51] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:19:54] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:19:57] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:00] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:03] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:05] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:05] "[35m[1mGET /voice HTTP/1.1[0m" 206 -
+127.0.0.1 - - [16/Jun/2025 13:20:06] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:09] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:12] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:15] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:18] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:18] "POST /recognize HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:19] "POST /ai-order HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:21] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:24] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:27] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:30] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:33] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:36] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:39] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:42] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:45] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:48] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:51] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:54] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:20:57] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:00] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:03] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:06] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:09] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:12] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:15] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:18] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:21] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:24] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:27] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:30] "GET /screen-status HTTP/1.1" 200 -
+server does not have extension for dpms option
+xset:  unknown option force
+
+usage:  xset [-display host:dpy] option ...
+    To turn bell off:
+	-b                b off               b 0
+    To set bell volume, pitch and duration:
+	 b [vol [pitch [dur]]]          b on
+    To disable bug compatibility mode:
+	-bc
+    To enable bug compatibility mode:
+	bc
+    To turn keyclick off:
+	-c                c off               c 0
+    To set keyclick volume:
+	 c [0-100]        c on
+    To control Display Power Management Signaling (DPMS) features:
+	-dpms      DPMS features off
+	+dpms      DPMS features on
+	 dpms [standby [suspend [off]]]     
+	      force standby 
+	      force suspend 
+	      force off 
+	      force on 
+	      (also implicitly enables DPMS features) 
+	      a timeout value of zero disables the mode 
+    To set the font path:
+	 fp= path[,path...]
+    To restore the default font path:
+	 fp default
+    To have the server reread font databases:
+	 fp rehash
+    To remove elements from font path:
+	-fp path[,path...]  fp- path[,path...]
+    To prepend or append elements to font path:
+	+fp path[,path...]  fp+ path[,path...]
+    To set LED states off or on:
+	-led [1-32]         led off
+	 led [1-32]         led on
+	-led named 'name'   led off
+	 led named 'name'   led on
+    To set mouse acceleration and threshold:
+	 m [acc_mult[/acc_div] [thr]]    m default
+    To set pixel colors:
+	 p pixel_value color_name
+    To turn auto-repeat off or on:
+	-r [keycode]        r off
+	 r [keycode]        r on
+	 r rate [delay [rate]]
+    For screen-saver control:
+	 s [timeout [cycle]]  s default    s on
+	 s blank              s noblank    s off
+	 s expose             s noexpose
+	 s activate           s reset
+    For status information:  q
+    To print version: -version
+127.0.0.1 - - [16/Jun/2025 13:21:31] "POST /display-control HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:33] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:36] "GET /screen-status HTTP/1.1" 200 -
+server does not have extension for dpms option
+xset:  unknown option force
+
+usage:  xset [-display host:dpy] option ...
+    To turn bell off:
+	-b                b off               b 0
+    To set bell volume, pitch and duration:
+	 b [vol [pitch [dur]]]          b on
+    To disable bug compatibility mode:
+	-bc
+    To enable bug compatibility mode:
+	bc
+    To turn keyclick off:
+	-c                c off               c 0
+    To set keyclick volume:
+	 c [0-100]        c on
+    To control Display Power Management Signaling (DPMS) features:
+	-dpms      DPMS features off
+	+dpms      DPMS features on
+	 dpms [standby [suspend [off]]]     
+	      force standby 
+	      force suspend 
+	      force off 
+	      force on 
+	      (also implicitly enables DPMS features) 
+	      a timeout value of zero disables the mode 
+    To set the font path:
+	 fp= path[,path...]
+    To restore the default font path:
+	 fp default
+    To have the server reread font databases:
+	 fp rehash
+    To remove elements from font path:
+	-fp path[,path...]  fp- path[,path...]
+    To prepend or append elements to font path:
+	+fp path[,path...]  fp+ path[,path...]
+    To set LED states off or on:
+	-led [1-32]         led off
+	 led [1-32]         led on
+	-led named 'name'   led off
+	 led named 'name'   led on
+    To set mouse acceleration and threshold:
+	 m [acc_mult[/acc_div] [thr]]    m default
+    To set pixel colors:
+	 p pixel_value color_name
+    To turn auto-repeat off or on:
+	-r [keycode]        r off
+	 r [keycode]        r on
+	 r rate [delay [rate]]
+    For screen-saver control:
+	 s [timeout [cycle]]  s default    s on
+	 s blank              s noblank    s off
+	 s expose             s noexpose
+	 s activate           s reset
+    For status information:  q
+    To print version: -version
+127.0.0.1 - - [16/Jun/2025 13:21:37] "POST /display-control HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:39] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:39] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:40] "[35m[1mGET /voice HTTP/1.1[0m" 206 -
+127.0.0.1 - - [16/Jun/2025 13:21:42] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:45] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:48] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:50] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:50] "[35m[1mGET /voice HTTP/1.1[0m" 206 -
+127.0.0.1 - - [16/Jun/2025 13:21:51] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:54] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:57] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:58] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:58] "[35m[1mGET /voice HTTP/1.1[0m" 206 -
+127.0.0.1 - - [16/Jun/2025 13:21:59] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:21:59] "[35m[1mGET /voice HTTP/1.1[0m" 206 -
+127.0.0.1 - - [16/Jun/2025 13:22:00] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:03] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:06] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:09] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:12] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:15] "GET /screen-status HTTP/1.1" 200 -
+server does not have extension for dpms option
+xset:  unknown option force
+
+usage:  xset [-display host:dpy] option ...
+    To turn bell off:
+	-b                b off               b 0
+    To set bell volume, pitch and duration:
+	 b [vol [pitch [dur]]]          b on
+    To disable bug compatibility mode:
+	-bc
+    To enable bug compatibility mode:
+	bc
+    To turn keyclick off:
+	-c                c off               c 0
+    To set keyclick volume:
+	 c [0-100]        c on
+    To control Display Power Management Signaling (DPMS) features:
+	-dpms      DPMS features off
+	+dpms      DPMS features on
+	 dpms [standby [suspend [off]]]     
+	      force standby 
+	      force suspend 
+	      force off 
+	      force on 
+	      (also implicitly enables DPMS features) 
+	      a timeout value of zero disables the mode 
+    To set the font path:
+	 fp= path[,path...]
+    To restore the default font path:
+	 fp default
+    To have the server reread font databases:
+	 fp rehash
+    To remove elements from font path:
+	-fp path[,path...]  fp- path[,path...]
+    To prepend or append elements to font path:
+	+fp path[,path...]  fp+ path[,path...]
+    To set LED states off or on:
+	-led [1-32]         led off
+	 led [1-32]         led on
+	-led named 'name'   led off
+	 led named 'name'   led on
+    To set mouse acceleration and threshold:
+	 m [acc_mult[/acc_div] [thr]]    m default
+    To set pixel colors:
+	 p pixel_value color_name
+    To turn auto-repeat off or on:
+	-r [keycode]        r off
+	 r [keycode]        r on
+	 r rate [delay [rate]]
+    For screen-saver control:
+	 s [timeout [cycle]]  s default    s on
+	 s blank              s noblank    s off
+	 s expose             s noexpose
+	 s activate           s reset
+    For status information:  q
+    To print version: -version
+127.0.0.1 - - [16/Jun/2025 13:22:18] "POST /display-control HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:19] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:21] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:24] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:27] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:30] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:33] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:36] "GET /screen-status HTTP/1.1" 200 -
+server does not have extension for dpms option
+xset:  unknown option force
+
+usage:  xset [-display host:dpy] option ...
+    To turn bell off:
+	-b                b off               b 0
+    To set bell volume, pitch and duration:
+	 b [vol [pitch [dur]]]          b on
+    To disable bug compatibility mode:
+	-bc
+    To enable bug compatibility mode:
+	bc
+    To turn keyclick off:
+	-c                c off               c 0
+    To set keyclick volume:
+	 c [0-100]        c on
+    To control Display Power Management Signaling (DPMS) features:
+	-dpms      DPMS features off
+	+dpms      DPMS features on
+	 dpms [standby [suspend [off]]]     
+	      force standby 
+	      force suspend 
+	      force off 
+	      force on 
+	      (also implicitly enables DPMS features) 
+	      a timeout value of zero disables the mode 
+    To set the font path:
+	 fp= path[,path...]
+    To restore the default font path:
+	 fp default
+    To have the server reread font databases:
+	 fp rehash
+    To remove elements from font path:
+	-fp path[,path...]  fp- path[,path...]
+    To prepend or append elements to font path:
+	+fp path[,path...]  fp+ path[,path...]
+    To set LED states off or on:
+	-led [1-32]         led off
+	 led [1-32]         led on
+	-led named 'name'   led off
+	 led named 'name'   led on
+    To set mouse acceleration and threshold:
+	 m [acc_mult[/acc_div] [thr]]    m default
+    To set pixel colors:
+	 p pixel_value color_name
+    To turn auto-repeat off or on:
+	-r [keycode]        r off
+	 r [keycode]        r on
+	 r rate [delay [rate]]
+    For screen-saver control:
+	 s [timeout [cycle]]  s default    s on
+	 s blank              s noblank    s off
+	 s expose             s noexpose
+	 s activate           s reset
+    For status information:  q
+    To print version: -version
+127.0.0.1 - - [16/Jun/2025 13:22:39] "POST /display-control HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:39] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:39] "[35m[1mGET /voice HTTP/1.1[0m" 206 -
+127.0.0.1 - - [16/Jun/2025 13:22:39] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:40] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:40] "[35m[1mGET /voice HTTP/1.1[0m" 206 -
+127.0.0.1 - - [16/Jun/2025 13:22:42] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:44] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:44] "[35m[1mGET /voice HTTP/1.1[0m" 206 -
+127.0.0.1 - - [16/Jun/2025 13:22:45] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:48] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:51] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:54] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:57] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:58] "POST /recognize HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:22:59] "POST /ai-order HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:00] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:03] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:07] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:09] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:10] "POST /recognize HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:10] "POST /ai-order HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:12] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:15] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:18] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:21] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:22] "POST /recognize HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:23] "POST /ai-order HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:25] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:28] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:31] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:34] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:37] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:40] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:43] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:46] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:49] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:52] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:55] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:58] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:58] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:59] "GET /voice HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:59] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:23:59] "[35m[1mGET /voice HTTP/1.1[0m" 206 -
+127.0.0.1 - - [16/Jun/2025 13:24:01] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:04] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:07] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:10] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:13] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:16] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:19] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:22] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:25] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:28] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:31] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:34] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:37] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:40] "GET /screen-status HTTP/1.1" 200 -
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+[DEBUG] 받은 파일 크기: 82591 bytes
+[DEBUG] 저장 경로: /tmp/tmpd6n5mp1g.webm
+감지: True, 거리: True
+감지: True, 거리: True
+[DEBUG] Whisper 결과: {
+  "text": "\uadf8\uac70 \ub9d0\uc500\ud574\uc8fc\uc138\uc694. \ud30c\ud478\uce58\ub178 2\uac1c, \uc544\uba54\ub9ac\uce74\ub178 2\uac1c."
+}
+[GPT 요청 텍스트]: 그거 말씀해주세요. 파푸치노 2개, 아메리카노 2개.
+감지: True, 거리: True
+[GPT 파싱 결과] [{'name': '카푸치노', 'quantity': 2, 'price': 2900}, {'name': '아메리카노', 'quantity': 2, 'price': 1500}]
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: False, 거리: True
+조건 불만족 → 재확인
+조건 불만족 10초 경과 → 화면 OFF
+[display-control] 요청: screen=start-screen, display_on=False
+감지: False, 거리: True
+조건 불만족 → 재확인
+감지: True, 거리: True
+[display-control] 요청: screen=type-screen, display_on=True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: False, 거리: True
+조건 불만족 → 재확인
+조건 불만족 10초 경과 → 화면 OFF
+[display-control] 요청: screen=start-screen, display_on=False
+감지: False, 거리: True
+조건 불만족 → 재확인
+조건 불만족 10초 경과 → 화면 OFF
+감지: False, 거리: True
+조건 불만족 → 재확인
+감지: True, 거리: True
+[display-control] 요청: screen=type-screen, display_on=True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+[DEBUG] 받은 파일 크기: 79018 bytes
+[DEBUG] 저장 경로: /tmp/tmpqmsathus.webm
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+[DEBUG] Whisper 결과: {
+  "text": "\ub179\ucc28 \ud558\ub098, \uba54\ub274\ub77c\ub5bc \ub450\uac1c"
+}
+[GPT 요청 텍스트]: 녹차 하나, 메뉴라떼 두개
+감지: True, 거리: True
+[GPT 파싱 결과] [{'name': '녹차', 'quantity': 1, 'price': 2500}, {'name': '메뉴라떼', 'quantity': 2, 'price': 0}]
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+[DEBUG] 받은 파일 크기: 81927 bytes
+[DEBUG] 저장 경로: /tmp/tmpkojn7z39.webm
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+[DEBUG] Whisper 결과: {
+  "text": "\uc5f0\uc720\ub77c\ub5bc\uc5d0\uc774\ub4dc \uce74\ud398\ub77c\ub5bc \ud558\ub098"
+}
+[GPT 요청 텍스트]: 연유라떼에이드 카페라떼 하나
+감지: True, 거리: True
+[GPT 파싱 결과] [{'name': '연유라떼에이드', 'quantity': 1, 'price': 0}, {'name': '카페라떼', 'quantity': 1, 'price': 0}]
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+[DEBUG] 받은 파일 크기: 81192 bytes
+[DEBUG] 저장 경로: /tmp/tmpht1lrpf3.webm
+감지: True, 거리: True
+감지: True, 거리: True
+[DEBUG] Whisper 결과: {
+  "text": "\ubcf5\uc22d\uc544 \uc544\uc774\uc2a4\ud2f0 3\uac1c"
+}
+[GPT 요청 텍스트]: 복숭아 아이스티 3개
+감지: True, 거리: True
+[GPT 파싱 결과] [{'name': '복숭아아이스티', 'quantity': 3, 'price': 3000}]
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+감지: True, 거리: True
+127.0.0.1 - - [16/Jun/2025 13:24:43] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:46] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:49] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:52] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:55] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:24:58] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:25:01] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:25:04] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:25:07] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:25:10] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:25:13] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:25:16] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:25:19] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:25:22] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:25:25] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2025 13:25:28] "GET /screen-status HTTP/1.1" 200 -

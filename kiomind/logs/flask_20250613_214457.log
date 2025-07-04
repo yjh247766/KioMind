@@ -1,0 +1,38 @@
+[DEBUG] OpenAI Key Tail: OiwfUA
+ * Serving Flask app 'main'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.141.63:5000
+[33mPress CTRL+C to quit[0m
+W Query dynamic range failed. Ret code: RKNN_ERR_MODEL_INVALID. (If it is a static shape RKNN model, please ignore the above warning message.)
+127.0.0.1 - - [13/Jun/2025 21:45:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:03] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:04] "[35m[1mGET /voice HTTP/1.1[0m" 206 -
+127.0.0.1 - - [13/Jun/2025 21:45:04] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:05] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:05] "[35m[1mGET /voice HTTP/1.1[0m" 206 -
+127.0.0.1 - - [13/Jun/2025 21:45:05] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:05] "[35m[1mGET /voice HTTP/1.1[0m" 206 -
+127.0.0.1 - - [13/Jun/2025 21:45:07] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:08] "[35m[1mGET /voice HTTP/1.1[0m" 206 -
+127.0.0.1 - - [13/Jun/2025 21:45:08] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:11] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:14] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:17] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:20] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:21] "POST /recognize HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:22] "POST /ai-order HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:23] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:26] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:29] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:32] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:35] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:37] "POST /recognize HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:38] "POST /ai-order HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:38] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:41] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:44] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:47] "GET /screen-status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 21:45:50] "GET /screen-status HTTP/1.1" 200 -
