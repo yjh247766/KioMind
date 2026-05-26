@@ -52,11 +52,15 @@ KioMind/
 ├── object_detection.py          # YOLO11n RKNN person detector wrapper
 ├── ultrasonic_sensor.py         # HC-SR04 distance measurement via gpiod
 ├── object_and_sensor_test.py    # Hardware integration test script
+├── requirements.txt
+├── .env.example
+├── docs/
+│   └── model_conversion.md      # YOLO11n → ONNX → RKNN conversion guide
 ├── templates/
 │   └── kiosk.html               # Full kiosk UI (1080×1920, voice + touch)
 ├── yolo11n_rknn_model/
 │   ├── yolo11n-rk3588.rknn      # Compiled RKNN model (COCO, person class used)
-│   └── metadata.yaml            # Model metadata
+│   └── metadata.yaml
 ├── kiomind_GPiO/
 │   └── test.py                  # Standalone ultrasonic sensor test (OPi.GPIO)
 └── test/
@@ -85,7 +89,8 @@ KioMind/
 # System packages
 sudo apt install python3-pip ffmpeg libgpiod-dev
 
-# Python packages
+# Python packages — see requirements.txt
+# Note: uses openai>=1.0.0 (v1.x API)
 pip install -r requirements.txt
 
 # RKNN Lite runtime (install from Rockchip's official release)
@@ -94,29 +99,13 @@ pip install rknnlite
 
 ---
 
-## Requirements
-
-> **Note:** The codebase uses the **openai v1.x API** (`openai>=1.0.0`).  
-> The original project was developed with openai v0.x; the API calls have since been updated to v1.x syntax.
-
-```
-flask
-gtts
-pydub
-openai>=1.0.0
-python-dotenv
-opencv-python
-gpiod
-requests
-```
-
-Save this as `requirements.txt` in the project root and run `pip install -r requirements.txt`.
-
----
-
 ## Environment Setup
 
-Create a `.env` file in the project root:
+Copy `.env.example` to `.env` and fill in your values:
+
+```bash
+cp .env.example .env
+```
 
 ```env
 OPENAI_API_KEY=sk-...
@@ -125,7 +114,7 @@ OPENAI_API_KEY=sk-...
 # RKNN_MODEL_PATH=yolo11n_rknn_model/yolo11n-rk3588.rknn
 ```
 
-> **Never commit `.env` to version control.** Add it to `.gitignore`.
+> **Never commit `.env` to version control.** It is already listed in `.gitignore`.
 
 ---
 
@@ -200,11 +189,8 @@ Camera + Ultrasonic Sensor
 
 ## Menu
 
-| Category | Items |
-|---|---|
-| Coffee | 아메리카노, 카푸치노, 카페모카, 카라멜마끼아또, 카페라떼, 바닐라라떼, 연유라떼 |
-| Tea / Drinks | 복숭아아이스티, 레몬아이스티, 녹차, 캐모마일 |
-| Dessert | 티라미수, 초코케이크, 치즈케이크, 허니브레드, 소금빵 |
+Menu items and prices are defined in `MENU_NAMES` and `PRICE` in `main.py`.  
+See `main.py` for the full list.
 
 ---
 
