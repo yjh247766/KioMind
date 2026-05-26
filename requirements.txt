@@ -1,0 +1,8 @@
+flask
+gtts
+pydub
+openai>=1.0.0
+python-dotenv
+opencv-python
+gpiod
+requests

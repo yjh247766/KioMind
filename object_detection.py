@@ -3,6 +3,8 @@ import numpy as np
 import cv2
 import time
 
+# COCO class index 0 corresponds to 'person'; only this class is used
+PERSON_CLASS_ID = 0
 classNames = ["person"]
 
 def sigmoid(x):
@@ -17,6 +19,18 @@ class ObjectDetector:
             raise RuntimeError("Runtime init failed!")
 
     def detect(self, img, conf_threshold=0.4, nms_threshold=0.4):
+        """
+        Run YOLO11n inference on a single frame and return whether a person is detected.
+
+        Args:
+            img: BGR image as a numpy array (from cv2.VideoCapture)
+            conf_threshold: minimum confidence score to accept a detection
+            nms_threshold: IoU threshold for Non-Maximum Suppression
+
+        Returns:
+            True if at least one person is detected, False otherwise.
+        """
+        # Preprocess: resize to model input size and convert color space
         input_img = cv2.resize(img, (640, 640))
         input_img = cv2.cvtColor(input_img, cv2.COLOR_BGR2RGB)
         input_img = input_img.astype(np.uint8)
@@ -24,7 +38,7 @@ class ObjectDetector:
 
         outputs = self.rknn.inference(inputs=[input_img])
         output = outputs[0][0]
-        output = np.transpose(output)
+        output = np.transpose(output)  # shape: (num_anchors, 4 + num_classes)
 
         boxes = []
         confidences = []
@@ -35,8 +49,11 @@ class ObjectDetector:
             class_probs = row[4:]
             conf = np.max(class_probs)
             cls_id = np.argmax(class_probs)
-            if conf > conf_threshold and cls_id < len(classNames):
+
+            # Accept only high-confidence detections of the 'person' class
+            if conf > conf_threshold and cls_id == PERSON_CLASS_ID:
                 x, y, w, h = row[0], row[1], row[2], row[3]
+                # Convert center-format bbox to top-left corner format
                 x1 = int((x - w / 2) * img.shape[1] / 640)
                 y1 = int((y - h / 2) * img.shape[0] / 640)
                 width = int(w * img.shape[1] / 640)
@@ -46,13 +63,11 @@ class ObjectDetector:
                 confidences.append(float(conf))
                 class_ids.append(cls_id)
 
+        # Apply NMS to remove overlapping boxes
         indices = cv2.dnn.NMSBoxes(boxes, confidences, conf_threshold, nms_threshold)
 
-        # 감지된 사람이 한 명이라도 있으면 True 반환
-        if len(indices) > 0:
-            return True
-        else:
-            return False
+        # Return True if at least one person remains after NMS
+        return len(indices) > 0
 
     def release(self):
         self.rknn.release()

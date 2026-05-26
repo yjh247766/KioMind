@@ -2,13 +2,16 @@ import gpiod
 import time
 from gpiod.line import Direction, Value
 
+# Standalone ultrasonic sensor test using the gpiod (libgpiod v2) library.
+# GPIO chip and pin configuration
 CHIP_PATH = "/dev/gpiochip1"
 TRIG_PIN = 4   # gpio01_A4
 ECHO_PIN = 8   # gpio01_B0
 
+# Open chip and request lines once at module level for continuous polling
 chip = gpiod.Chip(CHIP_PATH)
 
-# TRIG 핀: 출력 설정
+# Configure TRIG pin as output
 trig_settings = gpiod.LineSettings()
 trig_settings.direction = Direction.OUTPUT
 trig = chip.request_lines(
@@ -16,7 +19,7 @@ trig = chip.request_lines(
     config={TRIG_PIN: trig_settings}
 )
 
-# ECHO 핀: 입력 설정
+# Configure ECHO pin as input
 echo_settings = gpiod.LineSettings()
 echo_settings.direction = Direction.INPUT
 echo = chip.request_lines(
@@ -24,38 +27,40 @@ echo = chip.request_lines(
     config={ECHO_PIN: echo_settings}
 )
 
-print("▶ 초음파 거리 측정 시작")
+print("Ultrasonic distance measurement starting")
 
 try:
     while True:
-        # 트리거 신호 생성 (LOW -> HIGH 20μs -> LOW)
+        # Generate trigger pulse: LOW -> HIGH (20 µs) -> LOW
         trig.set_values({TRIG_PIN: Value.INACTIVE})
         time.sleep(0.000002)
         trig.set_values({TRIG_PIN: Value.ACTIVE})
-        time.sleep(0.00002)  # 20μs로 펄스 길이 조정
+        time.sleep(0.00002)   # 20 µs pulse width
         trig.set_values({TRIG_PIN: Value.INACTIVE})
 
-        # Echo HIGH 대기 (최대 25ms)
+        # Wait for ECHO to go HIGH, with 10 ms timeout
         timeout = time.time() + 0.01
         while echo.get_value(ECHO_PIN) == Value.INACTIVE:
             if time.time() > timeout:
-                print("❌ Echo 응답 없음")
+                print("No echo received")
                 break
         else:
             start = time.time()
 
-            # Echo LOW 대기 (최대 25ms)
+            # Wait for ECHO to go LOW, with 10 ms timeout
             timeout = time.time() + 0.01
             while echo.get_value(ECHO_PIN) == Value.ACTIVE:
                 if time.time() > timeout:
-                    print("⚠️ Echo HIGH 유지 초과")
+                    print("Echo HIGH held too long")
                     break
             end = time.time()
 
+            # Calculate distance: speed of sound = 34300 cm/s, divide by 2 for round-trip
             duration = end - start
-            distance = duration * 34300 / 2  # cm 단위 거리 계산
-            print(f"📏 거리: {distance:.2f} cm")
-            if(distance <= 60):
+            distance = duration * 34300 / 2
+            print(f"Distance: {distance:.2f} cm")
+
+            if distance <= 60:
                 print("true")
             else:
                 print("false")
@@ -63,4 +68,4 @@ try:
         time.sleep(0.5)
 
 except KeyboardInterrupt:
-    print("\n⏹ 측정 종료")
+    print("\nMeasurement stopped")

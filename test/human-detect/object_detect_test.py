@@ -3,6 +3,12 @@ import numpy as np
 import cv2
 import time
 
+# Standalone object detection test with bounding box visualization.
+# Loads the RKNN model directly (without the ObjectDetector wrapper) and
+# draws detection results on each frame for visual debugging.
+
+# COCO class index 0 corresponds to 'person'
+PERSON_CLASS_ID = 0
 classNames = ["person"]
 
 def sigmoid(x):
@@ -22,6 +28,18 @@ if rknn.init_runtime() != 0:
     exit()
 
 def detect_person_and_draw(img, conf_threshold=0.4, nms_threshold=0.4):
+    """
+    Run inference on a frame, apply NMS, and draw bounding boxes for all detected persons.
+
+    Args:
+        img: BGR image from cv2.VideoCapture
+        conf_threshold: minimum confidence to accept a detection
+        nms_threshold: IoU threshold for Non-Maximum Suppression
+
+    Returns:
+        True if at least one person was detected, False otherwise.
+    """
+    # Preprocess input
     input_img = cv2.resize(img, (640, 640))
     input_img = cv2.cvtColor(input_img, cv2.COLOR_BGR2RGB)
     input_img = input_img.astype(np.uint8)
@@ -29,7 +47,7 @@ def detect_person_and_draw(img, conf_threshold=0.4, nms_threshold=0.4):
 
     outputs = rknn.inference(inputs=[input_img])
     output = outputs[0][0]
-    output = np.transpose(output)
+    output = np.transpose(output)  # shape: (num_anchors, 4 + num_classes)
 
     boxes = []
     confidences = []
@@ -41,8 +59,9 @@ def detect_person_and_draw(img, conf_threshold=0.4, nms_threshold=0.4):
         conf = np.max(class_probs)
         cls_id = np.argmax(class_probs)
 
-        if conf > conf_threshold and cls_id < len(classNames):
+        if conf > conf_threshold and cls_id == PERSON_CLASS_ID:
             x, y, w, h = row[0], row[1], row[2], row[3]
+            # Convert center-format bbox to top-left corner format
             x1 = int((x - w / 2) * img.shape[1] / 640)
             y1 = int((y - h / 2) * img.shape[0] / 640)
             width = int(w * img.shape[1] / 640)
@@ -63,6 +82,7 @@ def detect_person_and_draw(img, conf_threshold=0.4, nms_threshold=0.4):
             conf = confidences[i]
             cls_id = class_ids[i]
 
+            # Draw bounding box and label
             cv2.rectangle(img, (x1, y1), (x2, y2), (255, 0, 255), 2)
             label = f"{classNames[cls_id]}: {conf:.2f}"
             cv2.putText(img, label, (x1, y1 - 5),
@@ -72,8 +92,8 @@ def detect_person_and_draw(img, conf_threshold=0.4, nms_threshold=0.4):
 
 
 cap = cv2.VideoCapture(0)
-cap.set(3, 480)  # 가로 480으로 줄임
-cap.set(4, 360)  # 세로도 비율에 맞게 줄임
+cap.set(3, 480)
+cap.set(4, 360)
 
 prev_time = time.time()
 
@@ -89,7 +109,7 @@ while True:
     else:
         print("No person detected.")
 
-    # FPS 계산
+    # Calculate and display FPS
     curr_time = time.time()
     fps = 1 / (curr_time - prev_time)
     prev_time = curr_time
