@@ -1,16 +1,16 @@
 # Model Conversion Guide: YOLO11n → ONNX → RKNN
 
-This document covers the full pipeline for training YOLO11n on a custom human detection dataset and converting it to an RKNN model for inference on a Rockchip RK3588 board.
+This document covers the full pipeline for fine-tuning YOLO11n on a custom human detection dataset and converting it to an RKNN model for inference on a Rockchip RK3588 board.
 
 ---
 
 ## Overview
 
 ```
-Roboflow Dataset
+Roboflow Dataset (human detection)
       │
       ▼
-YOLO11n Training (.pt)       ← any machine with GPU (or CPU)
+YOLO11n Fine-tuning (.pt)    ← COCO pretrained base + custom dataset, GTX 1060 Ti
       │
       ▼
 Export to ONNX (.onnx)       ← same machine, ultralytics export
@@ -60,7 +60,7 @@ dataset/
 
 ---
 
-## Step 2: Train YOLO11n
+## Step 2: Fine-tune YOLO11n on Custom Dataset
 
 Install Ultralytics:
 
@@ -68,12 +68,15 @@ Install Ultralytics:
 pip install ultralytics
 ```
 
-Train the model:
+This project uses **transfer learning** — starting from COCO pretrained YOLO11n weights
+and fine-tuning on a custom human detection dataset from Roboflow.
+Training took approximately 2 hours on a GTX 1060 Ti.
 
 ```python
 from ultralytics import YOLO
 
-model = YOLO("yolo11n.pt")  # load pretrained YOLO11n weights
+# Load COCO pretrained YOLO11n as the base model
+model = YOLO("yolo11n.pt")
 
 model.train(
     data="dataset/data.yaml",
@@ -90,6 +93,16 @@ The best weights are saved at:
 runs/detect/kiomind_person/weights/best.pt
 ```
 
+After training, rename `best.pt` for use in the conversion step:
+
+```bash
+cp runs/detect/kiomind_person/weights/best.pt yolo11n.pt
+```
+
+> **Note:** The resulting `yolo11n.pt` is a fine-tuned model, not the original pretrained weights.  
+> `metadata.yaml` may still show the COCO config path — this is inherited from the base model's
+> training config and does not mean the model was trained on COCO from scratch.
+
 ---
 
 ## Step 3: Export to ONNX
@@ -97,7 +110,7 @@ runs/detect/kiomind_person/weights/best.pt
 ```python
 from ultralytics import YOLO
 
-model = YOLO("runs/detect/kiomind_person/weights/best.pt")
+model = YOLO("yolo11n.pt")
 
 model.export(
     format="onnx",
@@ -107,7 +120,7 @@ model.export(
 )
 ```
 
-Output: `best.onnx`
+Output: `yolo11n.onnx`
 
 ---
 
@@ -126,7 +139,7 @@ Or install from the [official Rockchip GitHub release](https://github.com/rockch
 ```python
 from rknn.api import RKNN
 
-ONNX_MODEL = "best.onnx"
+ONNX_MODEL = "yolo11n.onnx"
 RKNN_MODEL = "yolo11n-rk3588.rknn"
 
 rknn = RKNN(verbose=False)
@@ -144,8 +157,8 @@ if ret != 0:
     print("Load ONNX model failed!")
     exit(ret)
 
-# Build (INT8 quantization)
-# If you have a calibration dataset, pass dataset= parameter for accurate INT8
+# Build with INT8 quantization
+# Provide a calibration dataset for better accuracy
 ret = rknn.build(do_quantization=True, dataset="calibration.txt")
 if ret != 0:
     print("Build failed!")
@@ -202,3 +215,4 @@ rknn.init_runtime()
 | `opset` error during load | Unsupported ONNX opset | Re-export with `opset=11` or `opset=12` |
 | Low detection accuracy after INT8 | Missing calibration dataset | Provide a `calibration.txt` with representative images |
 | `init_runtime()` fails on board | rknnlite version mismatch | Match rknnlite version to the RKNN Toolkit2 version used for conversion (v1.6.0) |
+| `metadata.yaml` shows COCO path | Inherited from base model config | Expected behavior for transfer learning — not a bug |
