@@ -7,7 +7,7 @@ It detects approaching customers via camera and ultrasonic sensor, then activate
 
 ## Documentation
 
-- [Model Conversion Guide](docs/model_conversion.md) — YOLO11n training → ONNX → RKNN (RKNN Toolkit2 v1.6.0)
+- [Model Conversion Guide](docs/model_conversion.md) — YOLO11n fine-tuning → ONNX → RKNN (RKNN Toolkit2 v1.6.0)
 
 ---
 
@@ -33,7 +33,7 @@ KioMind replaces a traditional touch-only kiosk with a hands-free, voice-driven 
 | Layer | Technology |
 |---|---|
 | Hardware | Rockchip RK3588 (Orange Pi 5 or equivalent) |
-| Object Detection | YOLO11n converted to RKNN (rknnlite) |
+| Object Detection | YOLO11n fine-tuned on custom human dataset, converted to RKNN (rknnlite) |
 | Proximity Sensor | HC-SR04 ultrasonic via `gpiod` (libgpiod v2) |
 | Backend | Python 3, Flask |
 | Speech-to-Text | OpenAI Whisper API (`whisper-1`) |
@@ -55,11 +55,11 @@ KioMind/
 ├── requirements.txt
 ├── .env.example
 ├── docs/
-│   └── model_conversion.md      # YOLO11n → ONNX → RKNN conversion guide
+│   └── model_conversion.md      # YOLO11n fine-tuning → ONNX → RKNN guide
 ├── templates/
 │   └── kiosk.html               # Full kiosk UI (1080×1920, voice + touch)
 ├── yolo11n_rknn_model/
-│   ├── yolo11n-rk3588.rknn      # Compiled RKNN model (COCO, person class used)
+│   ├── yolo11n-rk3588.rknn      # RKNN model fine-tuned on custom human dataset
 │   └── metadata.yaml
 ├── kiomind_GPiO/
 │   └── test.py                  # Standalone ultrasonic sensor test (OPi.GPIO)
@@ -184,6 +184,19 @@ Camera + Ultrasonic Sensor
          ▼
   POST /display-control → xset dpms force off
 ```
+
+---
+
+## Model
+
+The RKNN model (`yolo11n_rknn_model/yolo11n-rk3588.rknn`) is a custom-trained model:
+
+- **Base**: YOLO11n pretrained on COCO
+- **Fine-tuned on**: Custom human detection dataset from Roboflow
+- **Training**: 10 sessions on Windows (GTX 1060 Ti), approximately 2 hours total
+- **Conversion**: ONNX → RKNN via RKNN Toolkit2 v1.6.0 on Ubuntu 22.04 (native, not Docker)
+
+See [docs/model_conversion.md](docs/model_conversion.md) for the full pipeline.
 
 ---
 
